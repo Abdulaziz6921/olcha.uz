@@ -5,6 +5,7 @@ import { FiSearch } from "react-icons/fi";
 import { FaUser } from "react-icons/fa";
 import { AiOutlineHeart } from "react-icons/ai";
 import { BsFillBagPlusFill } from "react-icons/bs";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   let stl = {
@@ -20,7 +21,7 @@ function Navbar() {
       "text-white text-[21px] flex justify-center items-center bg-[#EB1537] w-[13%] h-full rounded-r-full",
 
     additions:
-      "flex flex-col justify-around items-center w-fit px-[5px] h-[85%] text-[18px]",
+      "flex flex-col justify-center items-center w-fit px-[5px] h-[85%] text-[18px]",
   };
   return (
     <div className={stl.size}>
@@ -41,10 +42,10 @@ function Navbar() {
           </div>
         </div>
 
-        <div className={stl.additions}>
+        <Link to="login" className={stl.additions}>
           <FaUser />
           <p>Log in</p>
-        </div>
+        </Link>
 
         <div className={stl.additions}>
           <svg
