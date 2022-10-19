@@ -26,7 +26,7 @@ function Top_Slider() {
   };
 
   const SamplePrevArrow = (props) => {
-    const { className, style, onClick } = props;
+    const { className, onClick } = props;
     return (
       <div className={className} onClick={onClick}>
         <BsArrowLeftCircle className={stl.arrowLeft} />
