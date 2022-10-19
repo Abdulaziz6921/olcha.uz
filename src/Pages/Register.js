@@ -1,7 +1,18 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { auth } from "../Firebase/firebaseConfig";
+import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 
 function Register() {
+  const navigate = useNavigate();
+  const provider = new GoogleAuthProvider();
+  const signInWithGoogle = () => {
+    signInWithPopup(auth, provider)
+      .then((res) => {
+        navigate("/");
+      })
+      .catch((err) => console.log(err));
+  };
   return (
     <div className="p-20 h-screen w-screen flex flex-col-reverse md:flex-row items-center justify-center bg-gradient-to-r from-[#E66346] to-[#98508E]">
       <div className="content text-3xl text-center md:text-left">
@@ -13,16 +24,23 @@ function Register() {
         </p>
       </div>
       <div className="container mx-auto flex flex-col items-center">
+        <button
+          onClick={signInWithGoogle}
+          className="border-2 border-black p-2"
+        >
+          Google
+        </button>
+
         <form className="shadow-lg w-[400px] px-[40px] flex flex-col bg-white h-fit">
           <h1 className="text-center text-[30px] pt-[30px] ">Register</h1>
-          <label htmlFor="phone_number" className="text-red-500 my-[15px] ">
+          <label htmlhtmlFor="phone_number" className="text-red-500 my-[15px] ">
             Phone Number
           </label>
           <input
             type="number"
             className="mb-3 py-3 px-4 border-2 border-red-500 focus:outline-none rounded-full"
           />
-          <label htmlFor="password" className="text-red-500 my-[15px] ">
+          <label htmlhtmlFor="password" className="text-red-500 my-[15px] ">
             Password
           </label>
           <input
