@@ -33,14 +33,14 @@ function Register() {
 
         <form className="shadow-lg w-[400px] px-[40px] flex flex-col bg-white h-fit">
           <h1 className="text-center text-[30px] pt-[30px] ">Register</h1>
-          <label htmlhtmlFor="phone_number" className="text-red-500 my-[15px] ">
+          <label htmlFor="phone_number" className="text-red-500 my-[15px] ">
             Phone Number
           </label>
           <input
             type="number"
             className="mb-3 py-3 px-4 border-2 border-red-500 focus:outline-none rounded-full"
           />
-          <label htmlhtmlFor="password" className="text-red-500 my-[15px] ">
+          <label htmlFor="password" className="text-red-500 my-[15px] ">
             Password
           </label>
           <input

@@ -18,17 +18,14 @@ function Login() {
             <h1 className="text-center text-[30px] pt-[30px] ">
               Login or create an account
             </h1>
-            <label
-              htmlhtmlFor="phone_number"
-              className="text-red-500 my-[15px] "
-            >
+            <label htmlFor="phone_number" className="text-red-500 my-[15px] ">
               Phone Number
             </label>
             <input
               type="text"
               className="mb-3 py-3 px-4 border-2 border-red-500 focus:outline-none rounded-full"
             />
-            <label htmlhtmlFor="password" className="text-red-500 my-[15px] ">
+            <label htmlFor="password" className="text-red-500 my-[15px] ">
               Password
             </label>
             <input

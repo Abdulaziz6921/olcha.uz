@@ -22,7 +22,7 @@ function Product({ product }) {
   const [mouseScreen, setMouseScreen] = useState(false);
 
   let stl = {
-    box: "relative w-full h-[520px] md:w-[255px] hover:shadow-custom mt-[20px] mb-[20px]",
+    box: " relative w-[190px] h-[520px] md:w-[255px] hover:shadow-custom mt-[20px] mb-[20px]",
     heart: "hover:animate-beat text-red-500 text-[22px] absolute top-3 right-2",
     forward:
       "flex justify-center items-center w-[35px] h-[35px] text-red-500  text-[22px] absolute top-12 right-0",
@@ -83,7 +83,9 @@ function Product({ product }) {
           </p>
         </div>
       </div>
-      <img src={product.image} alt="" className={stl.img} />
+
+      <img src={product.images[0]} alt="" className={stl.img} />
+
       <div className={stl.delivery}>
         <img src={car} width="20" height="20" decoding="async" alt="delivery" />
       </div>
@@ -190,8 +192,8 @@ function App() {
   useEffect(() => {
     const getData = async () => {
       await axios
-        .get("https://fakestoreapi.com/products")
-        .then((res) => setData(res.data))
+        .get("https://dummyjson.com/products")
+        .then((res) => setData(res.data.products))
         .catch((err) => console.log(err));
     };
 
