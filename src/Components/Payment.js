@@ -5,7 +5,7 @@ function Payment({ data, Product, stl }) {
   return (
     <div className={stl.size}>
       <div className={stl.top}>
-        <p className={stl.title}>Favorible Intallment</p>
+        <p className={stl.title}>Favorible Installment</p>
         <a
           href="https://olcha.uz/oz/Extremely Convenient Payment Plan"
           className={stl.browse}

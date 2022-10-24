@@ -14,13 +14,15 @@ import { BiCopy } from "react-icons/bi";
 import { BsFacebook, BsInstagram } from "react-icons/bs";
 import { BsTelegram } from "react-icons/bs";
 import car from "./Images/car.svg";
+import { collection, onSnapshot } from "firebase/firestore";
+import { db } from "./Firebase/firebaseConfig.js";
 
 function Product({ product }) {
   const [mouse, setMouse] = useState(false);
   const [mouseScreen, setMouseScreen] = useState(false);
 
   let stl = {
-    box: "relative w-full h-[520px] md:w-[255px] md:h-[500px] hover:shadow-custom mt-[40px]",
+    box: "relative w-full h-[520px] md:w-[255px] hover:shadow-custom mt-[20px] mb-[20px]",
     heart: "hover:animate-beat text-red-500 text-[22px] absolute top-3 right-2",
     forward:
       "flex justify-center items-center w-[35px] h-[35px] text-red-500  text-[22px] absolute top-12 right-0",
@@ -183,6 +185,8 @@ let stl = {
 
 function App() {
   const [data, setData] = useState([]);
+  const [document, setDocument] = useState([]);
+  console.log(document);
   useEffect(() => {
     const getData = async () => {
       await axios
@@ -195,6 +199,22 @@ function App() {
       getData();
     };
   }, []);
+
+  useEffect(() => {
+    const getData = async () => {
+      onSnapshot(
+        collection(db, "products"),
+        (snapshot) => {
+          setDocument(snapshot.docs.map((doc) => doc.data()));
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
+    };
+    getData();
+  }, []);
+
   return (
     <div className="App">
       <Navbar />

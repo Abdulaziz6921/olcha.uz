@@ -9,7 +9,7 @@ function Top_Slider() {
       "top-0 bottom-0 my-auto text-[30px] bg-red-600 rounded-full text-white hover:text-red-600 hover:bg-white duration-500 absolute right-8",
 
     arrowLeft:
-      "top-0 bottom-0 my-auto text-[30px] bg-red-600 rounded-full text-white hover:text-red-600 hover:bg-white duration-500 absolute left-0",
+      "absolute left-0 top-0 bottom-0 my-auto text-[30px] bg-red-600 rounded-full text-white hover:text-red-600 hover:bg-white duration-500 ",
 
     size: " mx-auto w-[90%] md:w-[93%] h-fit my-[30px] md:my-[80px]",
 
